@@ -1,0 +1,147 @@
+/* ~/.config/librewolf/librewolf/n3pha2sa.default-release/chrome/userChrome.css */
+
+/* abas */
+.tabbrowser-tab,
+.tab-background,
+.tab-stack,
+.tab-content,
+.tab-background::before,
+.tab-background::after {
+    border-radius: 0 !important;
+}
+
+/* tokens globais de raio */
+:root {
+    --border-radius-xsmall: 0px !important;
+    --border-radius-small: 0px !important;
+    --border-radius-medium: 0px !important;
+    --border-radius-large: 0px !important;
+    --border-radius-xlarge: 0px !important;
+    --border-radius-circle: 0px !important;
+
+    --button-border-radius: 0px !important;
+    --toolbarbutton-border-radius: 0px !important;
+    --panel-border-radius: 0px !important;
+    --panel-menuitem-border-radius: 0px !important;
+    --popup-border-radius: 0px !important;
+    --menuitem-border-radius: 0px !important;
+    --tab-border-radius: 0px !important;
+    --card-border-radius: 0px !important;
+    --card-border-radius-compact: 0px !important;
+    --promo-border-radius: 0px !important;
+    --input-border-radius: 0px !important;
+    --input-search-border-radius: 0px !important;
+    --select-border-radius: 0px !important;
+    --link-border-radius-focus: 0px !important;
+    --urlbarview-border-radius: 0px !important;
+    --urlbarview-row-border-radius: 0px !important;
+    --urlbarview-icon-border-radius: 0px !important;
+    --urlbarview-top-pick-icon-border-radius: 0px !important;
+    --urlbarview-rich-search-suggestion-icon-border-radius: 0px !important;
+    --arrowscrollbox-scrollicon-border-radius: 0px !important;
+    --border-radius: 0px !important;
+}
+
+/* painéis, menus e popups */
+menupopup,
+panel,
+.panel-arrowcontent,
+:is(menupopup, panel)::part(content) {
+    --panel-border-radius: 0px !important;
+    --menuitem-border-radius: 0px !important;
+    border-radius: 0 !important;
+}
+
+/* barra de ferramentas e itens de menu */
+toolbarbutton,
+.toolbarbutton-1,
+.subviewbutton,
+menu,
+menuitem,
+menucaption {
+    border-radius: 0 !important;
+}
+
+/* componentes personalizados */
+moz-button,
+moz-input,
+moz-select,
+moz-promo,
+moz-card {
+    border-radius: 0 !important;
+}
+
+/* botões */
+moz-button {
+    --button-border-radius: 0px !important;
+}
+
+/* campos */
+moz-input {
+    --input-border-radius: 0px !important;
+    --input-search-border-radius: 0px !important;
+}
+
+/* caixas de seleção */
+moz-select {
+    --select-border-radius: 0px !important;
+}
+
+/* promoções */
+moz-promo {
+    --promo-border-radius: 0px !important;
+}
+
+/* cartões */
+moz-card {
+    --card-border-radius: 0px !important;
+    --card-border-radius-compact: 0px !important;
+}
+
+/* valores fixos */
+#alertSettings,
+.ctrlTab-preview-inner,
+#ctrlTab-showAll,
+#ai-window-switch-classic,
+#ai-window-switch-ai,
+.smartbar,
+.smartbar > .urlbar-background,
+.smartbar > .urlbar-background::before,
+.smartbar > .urlbar-background::after,
+.spectrum-color-picker,
+.spectrum-alpha-input,
+.spectrum-hue-input,
+.spectrum-hue-input::-moz-range-thumb,
+.spectrum-alpha-input::-moz-range-thumb,
+.spectrum-hue-input::-moz-range-track,
+.spectrum-dragger,
+.spectrum-color-preview,
+.pip-wrapper:not(.experiment) > .pip-expanded {
+    border-radius: 0 !important;
+}
+
+/* indicador de rolagem automática */
+.autoscroller {
+    --panel-border-radius: 0px !important;
+    border-radius: 0 !important;
+}
+
+/* barra de endereço e busca */
+.urlbar,
+.urlbar-background,
+.urlbar-input-container,
+.urlbarView,
+.urlbarView-background,
+#urlbar,
+#urlbar-container,
+#searchbar,
+.searchbar-textbox {
+    border-radius: 0 !important;
+}
+
+/* botões e campos */
+button,
+input,
+textarea {
+    border-radius: 0 !important;
+}

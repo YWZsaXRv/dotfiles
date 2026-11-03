@@ -1,0 +1,116 @@
+/* ~/.config/librewolf/librewolf/n3pha2sa.default-release/chrome/userContent.css */
+
+/* busca da nova aba, página inicial e janela privativa */
+@-moz-document url-prefix("about:newtab"), url-prefix("about:home"), url-prefix("about:privatebrowsing") {
+    /* campo de pesquisa */
+    content-search-handoff-ui {
+        --content-search-handoff-ui-border-radius: 0px !important;
+    }
+
+    /* barra de endereço alternativa */
+    .search-wrapper .search-inner-wrapper,
+    .search-wrapper .search-inner-wrapper moz-urlbar {
+        --urlbar-border-radius: 0px !important;
+        --urlbarview-border-radius: 0px !important;
+        --urlbar-background-border-radius: 0px !important;
+        --urlbar-inner-border-radius: 0px !important;
+        border-radius: 0 !important;
+    }
+
+    /* elementos visíveis */
+    .search-wrapper,
+    .search-inner-wrapper,
+    content-search-handoff-ui,
+    .search-handoff-button,
+    .search-handoff-button .fake-textbox,
+    moz-urlbar .urlbar,
+    moz-urlbar .urlbar-background,
+    moz-urlbar .urlbar-input-container,
+    moz-urlbar .urlbarView-background {
+        border-radius: 0 !important;
+    }
+}
+
+/* páginas internas about: */
+@-moz-document url-prefix("about:") {
+    /* tokens globais de raio */
+    :root {
+        --border-radius-xsmall: 0px !important;
+        --border-radius-small: 0px !important;
+        --border-radius-medium: 0px !important;
+        --border-radius-large: 0px !important;
+        --border-radius-xlarge: 0px !important;
+        --border-radius-circle: 0px !important;
+
+        --button-border-radius: 0px !important;
+        --toolbarbutton-border-radius: 0px !important;
+        --panel-border-radius: 0px !important;
+        --panel-menuitem-border-radius: 0px !important;
+        --popup-border-radius: 0px !important;
+        --menuitem-border-radius: 0px !important;
+        --card-border-radius: 0px !important;
+        --card-border-radius-compact: 0px !important;
+        --promo-border-radius: 0px !important;
+        --input-border-radius: 0px !important;
+        --input-search-border-radius: 0px !important;
+        --select-border-radius: 0px !important;
+        --link-border-radius-focus: 0px !important;
+        --border-radius: 0px !important;
+    }
+
+    /* menus e popups */
+    menupopup,
+    panel,
+    :is(menupopup, panel)::part(content) {
+        --panel-border-radius: 0px !important;
+        --menuitem-border-radius: 0px !important;
+        border-radius: 0 !important;
+    }
+
+    /* botões, campos e diálogos */
+    button,
+    input,
+    textarea,
+    select,
+    menulist,
+    dialog,
+    .dialogBox,
+    table,
+    .action-box,
+    #categories > .category,
+    .info-box-container,
+    moz-button,
+    moz-input,
+    moz-select,
+    moz-promo,
+    moz-card {
+        border-radius: 0 !important;
+    }
+
+    /* botões */
+    moz-button {
+        --button-border-radius: 0px !important;
+    }
+
+    /* campos */
+    moz-input {
+        --input-border-radius: 0px !important;
+        --input-search-border-radius: 0px !important;
+    }
+
+    /* caixas de seleção */
+    moz-select {
+        --select-border-radius: 0px !important;
+    }
+
+    /* promoções */
+    moz-promo {
+        --promo-border-radius: 0px !important;
+    }
+
+    /* cartões */
+    moz-card {
+        --card-border-radius: 0px !important;
+        --card-border-radius-compact: 0px !important;
+    }
+}
