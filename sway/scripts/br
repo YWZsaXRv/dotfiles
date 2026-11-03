@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+# br: ajusta o brilho do monitor via ddcutil 
+#
+# uso: br [-a n] [-d n] [-s n] [-m]
+#   -a n  aumenta (padrao 5)
+#   -d n  diminui (padrao 5)
+#   -s n  define o valor 
+#   -m    mostra o valor atual 
+#
+# requisitos: 
+# sudo pacman -S ddcutil
+# sudo modprobe i2c-dev
+# sudo usermod -aG i2c $USER
+#
+# SWAY (~/.config/sway/config)
+# bindsym --to-code $mod+bracketleft exec $HOME/.config/sway/scripts/br -a 5
+# bindsym --to-code $mod+bracketright exec $HOME/.config/sway/scripts/br -d 5
+
+barramento=2
+piso=10
+teto=100
+passo_padrao=5
+arquivo_trava="/tmp/br.lock"
+
+exec 9>"$arquivo_trava"
+flock -n 9 || exit 0
+
+valor_atual=$(ddcutil --bus "$barramento" getvcp 12 --terse | awk '{print $4}')
+[[ $valor_atual =~ ^[0-9]+$ ]] || { echo "br: nao consegui ler o contraste" >&2; exit 1; }
+
+case "$1" in
+    -a) valor_novo=$((valor_atual + ${2:-$passo_padrao})) ;;
+    -d) valor_novo=$((valor_atual - ${2:-$passo_padrao})) ;;
+    -s) valor_novo=$2 ;;
+    -m|"") echo "$valor_atual"; exit 0 ;;
+    *) echo "uso: br [-a n] [-d n] [-s n] [-m]" >&2; exit 1 ;;
+esac
+
+[[ $valor_novo =~ ^[0-9]+$ ]] || { echo "br: valor invalido" >&2; exit 1; }
+
+(( valor_novo < piso )) && valor_novo=$piso
+(( valor_novo > teto )) && valor_novo=$teto
+
+ddcutil --bus "$barramento" --noverify setvcp 12 "$valor_novo"
+echo "$valor_novo"

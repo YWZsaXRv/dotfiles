@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# print: screenshot no wayland-sway com grim + slurp + satty
+#
+# uso: print      tela cheia, salva em ~/Imagens/print e copia
+#      print -s   abre seletor
+#
+# requisitos: sudo pacman -S --needed grim slurp wl-clipboard satty
+
+pasta="$HOME/Imagens/print"
+arquivo="$pasta/print-$(date +%F_%H-%M-%S).png"
+mkdir -p "$pasta"
+
+case "$1" in
+    -s)
+        area=$(slurp) || exit 0
+        grim -g "$area" - | satty --filename - --fullscreen \
+            --output-filename "$arquivo" --copy-command wl-copy
+        ;;
+    *)
+        grim "$arquivo" && wl-copy < "$arquivo"
+        ;;
+esac
